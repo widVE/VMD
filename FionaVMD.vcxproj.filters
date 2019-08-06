@@ -1,0 +1,820 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="VMD\Animation.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\AtomColor.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\AtomLexer.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\AtomParser.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\AtomRep.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\AtomSel.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\Axes.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\BaseMolecule.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\Benchmark.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\BondSearch.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\cmd_animate.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\cmd_collab.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\cmd_color.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\cmd_display.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\cmd_imd.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\cmd_label.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\cmd_material.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\cmd_menu.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\cmd_mobile.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\cmd_mol.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\cmd_mouse.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\cmd_parallel.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\cmd_plugin.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\cmd_render.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\cmd_spaceball.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\cmd_tool.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\cmd_trans.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\cmd_user.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\cmd_util.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\cmd_vmdbench.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\CmdAnimate.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\CmdColor.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\CmdDisplay.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\CmdIMD.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\CmdLabel.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\CmdMaterial.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\CmdMenu.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\CmdMol.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\CmdRender.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\CmdTrans.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\ColorInfo.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\CommandQueue.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\CoorPluginData.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\CUDAAccel.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\DispCmds.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\Displayable.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\DisplayDevice.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\DisplayRocker.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\DrawForce.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\DrawMolecule.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\DrawMolItem2.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\DrawMolItem.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\DrawMolItemMSMS.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\DrawMolItemOrbital.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\DrawMolItemQuickSurf.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\DrawMolItemRibbons.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\DrawMolItemRings.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\DrawMolItemSurface.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\DrawMolItemVolume.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\DrawRingsUtils.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\FileRenderer.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\fitrms.c">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\GeometryAngle.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\GeometryAtom.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\GeometryBond.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\GeometryDihedral.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\GeometryList.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\GeometryMol.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\GeometrySpring.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\hash.c">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\Hershey.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\ImageIO.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\imd.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\IMDMgr.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\IMDSim.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\IMDSimBlocking.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\IMDSimThread.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\Inform.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\inthash.c">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\intstack.c">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\Isocontour.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\Isosurface.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\JRegex.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\JString.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\MaterialList.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\Matrix4.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\Measure.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\MeasureCluster.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\MeasurePBC.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\MeasureRDF.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\MeasureSurface.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\MeasureSymmetry.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\MobileButtons.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\MobileInterface.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\MobileTracker.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\Molecule.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\MoleculeGraphics.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\MoleculeList.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\MolFilePlugin.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\Mouse.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\msmpot.c">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\msmpot_compute.c">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\msmpot_cubic.c">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\msmpot_setup.c">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\MSMSInterface.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\OpenCLOrbital.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\OpenCLUtils.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\OpenCLVolCPotential.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\OpenGLCache.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\OpenGLExtensions.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\OpenGLRenderer.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\OpenGLShader.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\Orbital.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\OrbitalJIT.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\P_Buttons.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\P_CmdTool.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\P_GrabTool.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\P_JoystickButtons.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\P_JoystickTool.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\P_PinchTool.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\P_PrintTool.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\P_RotateTool.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\P_SensorConfig.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\P_Tool.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\P_Tracker.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\P_TugTool.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\P_UIVR.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\P_VRPNButtons.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\P_VRPNFeedback.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\P_VRPNTracker.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\ParseTree.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\pcre.c">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\PeriodicTable.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\PhoneButtons.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\PhoneTracker.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\PickList.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\PickModeAddBond.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\PickModeCenter.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\PickModeForce.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\PickModeList.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\PickModeMolLabel.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\PickModeMove.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\PickModeUser.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\PlainTextInterp.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\PluginMgr.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\py_animate.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\py_atomsel.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\py_atomselection.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\py_axes.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\py_color.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\py_commands.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\py_display.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\py_graphics.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\py_imd.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\py_label.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\py_material.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\py_menu.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\py_molecule.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\py_molrep.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\py_mouse.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\py_numeric.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\py_render.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\py_trans.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\py_vmd.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\PythonTextInterp.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\QMData.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\QMTimestep.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\QuickSurf.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\Scene.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\Spaceball.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\SpaceballButtons.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\SpaceballTracker.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\SpatialSearch.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\SpringTool.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\Stage.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\Stride.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\Surf.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\SymbolTable.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\tcl_commands.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\TclCommands.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\TclGraphics.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\TclMeasure.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\TclMolInfo.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\TclTextInterp.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\TclVec.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\TclVolMap.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\Timestep.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\UIObject.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\UIText.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\utilities.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\vmd.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\VMDApp.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\VMDCollab.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\vmdconsole.c">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\VMDDir.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\VMDDisplayList.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\vmddlopen.c">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\VMDMenu.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\VMDMPI.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\VMDQuat.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\vmdsock.c">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\VMDThreads.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\VMDTitle.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\VMDTkinterMenu.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\VMDTkMenu.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\VolCPotential.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\VolMapCreate.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\VolMapCreateILS.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\VolumeTexture.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\VolumetricData.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\Win32Joystick.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\win32vmdstart.c">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\WKFThreads.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\WKFUtils.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\FileRenderList.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\FPS.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="FionaVMD.cpp" />
+    <ClCompile Include="FionaVMDDisplayDevice.cpp" />
+    <ClCompile Include="VMD\ColorFltkMenu.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\FileChooserFltkMenu.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\GeometryFltkMenu.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\GraphicsFltkMenu.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\MainFltkMenu.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\MaterialFltkMenu.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\RenderFltkMenu.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\SaveTrajectoryFltkMenu.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\ToolFltkMenu.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\VMDFltkMenu.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\DisplayFltkMenu.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\SelectionBuilder.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\MolBrowser.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\frame_selector.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\FltkOpenGLDisplayDevice.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="FionaVMDTracker.cpp" />
+    <ClCompile Include="VMD\util_simd.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\py_measure.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\py_topo.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\MeasureQCP.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\TclMDFF.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\MDFF.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\RenderManDisplayDevice.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\GelatoDisplayDevice.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\POV3DisplayDevice.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\PSDisplayDevice.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\R3dDisplayDevice.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\RadianceDisplayDevice.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\RayShadeDisplayDevice.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\SnapshotDisplayDevice.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\TachyonDisplayDevice.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\Vrml2DisplayDevice.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\X3DDisplayDevice.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\ArtDisplayDevice.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\STLDisplayDevice.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\MayaDisplayDevice.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\WavefrontDisplayDevice.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+    <ClCompile Include="VMD\VrmlDisplayDevice.C">
+      <Filter>VMD</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FionaVMD.h" />
+    <ClInclude Include="FionaVMDDisplayDevice.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="FionaVMDTracker.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="VMD">
+      <UniqueIdentifier>{cccd5b3a-87af-4286-a7eb-c9f965cfbea5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="VMD\CUDAVolCPotential.cu">
+      <Filter>VMD</Filter>
+    </CudaCompile>
+    <CudaCompile Include="VMD\CUDAUtil.cu">
+      <Filter>VMD</Filter>
+    </CudaCompile>
+    <CudaCompile Include="VMD\CUDAQuickSurf.cu">
+      <Filter>VMD</Filter>
+    </CudaCompile>
+    <CudaCompile Include="VMD\CUDAOrbital.cu">
+      <Filter>VMD</Filter>
+    </CudaCompile>
+    <CudaCompile Include="VMD\CUDAMeasureRDF.cu">
+      <Filter>VMD</Filter>
+    </CudaCompile>
+    <CudaCompile Include="VMD\CUDAMarchingCubes.cu">
+      <Filter>VMD</Filter>
+    </CudaCompile>
+    <CudaCompile Include="VMD\CUDADispCmds.cu">
+      <Filter>VMD</Filter>
+    </CudaCompile>
+    <CudaCompile Include="VMD\CUDAClearDevice.cu">
+      <Filter>VMD</Filter>
+    </CudaCompile>
+    <CudaCompile Include="VMD\CUDAVolMapCreateILS.cu">
+      <Filter>VMD</Filter>
+    </CudaCompile>
+    <CudaCompile Include="VMD\CUDABench.cu">
+      <Filter>VMD</Filter>
+    </CudaCompile>
+    <CudaCompile Include="VMD\CUDAMDFF.cu">
+      <Filter>VMD</Filter>
+    </CudaCompile>
+    <CudaCompile Include="VMD\CUDAMeasure.cu">
+      <Filter>VMD</Filter>
+    </CudaCompile>
+    <CudaCompile Include="VMD\CUDASpatialSearch.cu">
+      <Filter>VMD</Filter>
+    </CudaCompile>
+  </ItemGroup>
+</Project>

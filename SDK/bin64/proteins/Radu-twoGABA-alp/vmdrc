@@ -1,0 +1,151 @@
+# add personalized keyboard shortcuts 
+user add key E echo on
+user add key e echo off
+user add key g display reset
+user add key A stage location bottom
+user add key m mol list
+
+# position the stage and axes
+axes location lowerleft
+stage location off
+
+# position and turn on menus
+menu main move 5 196
+menu display move 386 90
+menu animate move 124 7
+menu edit move 125 196
+menu graphics move 5 455
+menu files move 5 496
+menu mol move 5 745
+
+menu main on
+
+# start the scene a-rockin'
+rock y by 1
+
+############################################################
+# define global variable to store X window id.
+set vmd_opengl_wid -1
+global vmd_opengl_wid
+
+# callback function to be called when the top molecule changes
+proc vmd_change_opengl_name {args} {
+    global vmd_opengl_wid
+    if {[molinfo num] < 1} return
+
+    if {[llength $args] == 0} {
+        set name [join [molinfo top get name]]
+    } else {
+        set name [lindex $args 0]
+        if { [string equal $name vmd_molecule] } {
+            set name [join [molinfo top get name]]
+        }
+    }
+    if {$vmd_opengl_wid > 0} {
+        catch {exec xprop -id $vmd_opengl_wid \
+            -set WM_NAME "VMD [vmdinfo version]: $name"}
+        catch {exec xprop -id $vmd_opengl_wid \
+            -set WM_ICON_NAME $name}
+    }
+}
+
+# activate callback
+trace variable vmd_molecule w vmd_change_opengl_name
+
+# record window id for automatic title change
+after idle {
+    global vmd_opengl_wid
+    if {![catch {exec xwininfo -name \
+        "VMD [vmdinfo version] OpenGL Display"} val ]} {
+        set vmd_opengl_wid [lindex $val 3]
+    }
+    vmd_change_opengl_name
+}
+
+
+#######################################################
+proc geom_center {selection} {
+        # set the geometrical center to 0
+        set gc [veczero]
+        # [$selection get {x y z}] returns a list of {x y z} 
+        #    values (one per atoms) so get each term one by one
+        foreach coord [$selection get {x y z}] {
+           # sum up the coordinates
+           set gc [vecadd $gc $coord]
+        }
+        # and scale by the inverse of the number of atoms
+        return [vecscale [expr 1.0 /[$selection num]] $gc]
+}
+
+#######################################################
+proc center_of_mass {selection} {
+        # some error checking
+        if {[$selection num] <= 0} {
+                error "center_of_mass: needs a selection with atoms"
+        }
+        # set the center of mass to 0
+        set com [veczero]
+        # set the total mass to 0
+        set mass 0
+        # [$selection get {x y z}] returns the coordinates {x y z} 
+        # [$selection get {mass}] returns the masses
+        # so the following says "for each pair of {coordinates} and masses,
+	#  do the computation ..."
+        foreach coord [$selection get {x y z}] m [$selection get mass] {
+           # sum of the masses
+           set mass [expr $mass + $m]
+           # sum up the product of mass and coordinate
+           set com [vecadd $com [vecscale $m $coord]]
+        }
+        # and scale by the inverse of the number of atoms
+        if {$mass == 0} {
+                error "center_of_mass: total mass is zero"
+        }
+        # The "1.0" can't be "1", since otherwise integer division is done
+        return [vecscale [expr 1.0/$mass] $com]
+}
+
+############################################
+
+proc align_frames { molid } {
+    set nf [molinfo $molid get numframes]
+    puts "number of frames loaded: $nf"
+    for { set i 1 } { $i <= $nf } { incr i } {
+        set prot_frame [atomselect $molid "alpha" frame $i]
+        set reference0 [atomselect $molid "alpha" frame 0]
+        set transformation_matrix [measure fit $prot_frame $reference0]
+        set move_sel [atomselect $molid "all" frame $i]
+        $move_sel move $transformation_matrix
+    }
+}
+
+proc align_frames_alpha { molid } {
+    set nf [molinfo $molid get numframes]
+    puts "number of frames loaded: $nf"
+    for { set i 1 } { $i <= $nf } { incr i } {
+        set prot_frame [atomselect $molid "alpha" frame $i]
+        set reference0 [atomselect $molid "alpha" frame 0]
+        set transformation_matrix [measure fit $prot_frame $reference0]
+        set move_sel [atomselect $molid "all" frame $i]
+        $move_sel move $transformation_matrix
+    }
+}
+
+
+
+proc align_frames_dna { molid } {
+    set nf [molinfo $molid get numframes]
+    puts "number of frames loaded: $nf"
+    for { set i 1 } { $i <= $nf } { incr i } {
+        set prot_frame [atomselect $molid "name C1' P" frame $i]
+        set reference0 [atomselect $molid "name C1' P" frame 0]
+        set transformation_matrix [measure fit $prot_frame $reference0]
+        set move_sel [atomselect $molid "all" frame $i]
+        $move_sel move $transformation_matrix
+    }
+}
+
+#
+set auto_path [linsert $auto_path 0 {/home/MDynamics/VMD/vmd-1.9.2/plugins}]
+vmd_install_extension clustering clustering "WMC PhysBio/Clustering"
+#

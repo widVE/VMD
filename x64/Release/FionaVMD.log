@@ -1,0 +1,382 @@
+﻿Build started 8/2/2019 10:56:39 AM.
+     1>Project "S:\apps\dual_test\VMD\FionaVMD.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:".\SDK\bin64\FionaVMD.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:.\SDK\lib64 /LIBPATH:..\FionaLib\lib64 comctl32.lib xinput.lib FionaLib.lib Leap.lib cudart.lib fltk.lib fltkgl.lib opencl.lib tcl85.lib tk85.lib glew32s.lib glut32.lib opengl32.lib vrpn.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"SDK\bin64\FionaVMD.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"SDK\bin64\FionaVMD.lib" /MACHINE:X64 x64\Release\CUDABench.cu.obj
+         x64\Release\CUDAClearDevice.cu.obj
+         x64\Release\CUDADispCmds.cu.obj
+         x64\Release\CUDAMarchingCubes.cu.obj
+         x64\Release\CUDAMDFF.cu.obj
+         x64\Release\CUDAMeasure.cu.obj
+         x64\Release\CUDAMeasureRDF.cu.obj
+         x64\Release\CUDAOrbital.cu.obj
+         x64\Release\CUDAQuickSurf.cu.obj
+         x64\Release\CUDASpatialSearch.cu.obj
+         x64\Release\CUDAUtil.cu.obj
+         x64\Release\CUDAVolCPotential.cu.obj
+         x64\Release\CUDAVolMapCreateILS.cu.obj
+         x64\Release\FionaVMD.obj
+         x64\Release\FionaVMDDisplayDevice.obj
+         x64\Release\FionaVMDTracker.obj
+         x64\Release\main.obj
+         x64\Release\Animation.obj
+         x64\Release\ArtDisplayDevice.obj
+         x64\Release\AtomColor.obj
+         x64\Release\AtomLexer.obj
+         x64\Release\AtomParser.obj
+         x64\Release\AtomRep.obj
+         x64\Release\AtomSel.obj
+         x64\Release\Axes.obj
+         x64\Release\BaseMolecule.obj
+         x64\Release\Benchmark.obj
+         x64\Release\BondSearch.obj
+         x64\Release\CmdAnimate.obj
+         x64\Release\CmdColor.obj
+         x64\Release\CmdDisplay.obj
+         x64\Release\CmdIMD.obj
+         x64\Release\CmdLabel.obj
+         x64\Release\CmdMaterial.obj
+         x64\Release\CmdMenu.obj
+         x64\Release\CmdMol.obj
+         x64\Release\CmdRender.obj
+         x64\Release\CmdTrans.obj
+         x64\Release\cmd_animate.obj
+         x64\Release\cmd_collab.obj
+         x64\Release\cmd_color.obj
+         x64\Release\cmd_display.obj
+         x64\Release\cmd_imd.obj
+         x64\Release\cmd_label.obj
+         x64\Release\cmd_material.obj
+         x64\Release\cmd_menu.obj
+         x64\Release\cmd_mobile.obj
+         x64\Release\cmd_mol.obj
+         x64\Release\cmd_mouse.obj
+         x64\Release\cmd_parallel.obj
+         x64\Release\cmd_plugin.obj
+         x64\Release\cmd_render.obj
+         x64\Release\cmd_spaceball.obj
+         x64\Release\cmd_tool.obj
+         x64\Release\cmd_trans.obj
+         x64\Release\cmd_user.obj
+         x64\Release\cmd_util.obj
+         x64\Release\cmd_vmdbench.obj
+         x64\Release\ColorFltkMenu.obj
+         x64\Release\ColorInfo.obj
+         x64\Release\CommandQueue.obj
+         x64\Release\CoorPluginData.obj
+         x64\Release\CUDAAccel.obj
+         x64\Release\DispCmds.obj
+         x64\Release\Displayable.obj
+         x64\Release\DisplayDevice.obj
+         x64\Release\DisplayFltkMenu.obj
+         x64\Release\DisplayRocker.obj
+         x64\Release\DrawForce.obj
+         x64\Release\DrawMolecule.obj
+         x64\Release\DrawMolItem.obj
+         x64\Release\DrawMolItem2.obj
+         x64\Release\DrawMolItemMSMS.obj
+         x64\Release\DrawMolItemOrbital.obj
+         x64\Release\DrawMolItemQuickSurf.obj
+         x64\Release\DrawMolItemRibbons.obj
+         x64\Release\DrawMolItemRings.obj
+         x64\Release\DrawMolItemSurface.obj
+         x64\Release\DrawMolItemVolume.obj
+         x64\Release\DrawRingsUtils.obj
+         x64\Release\FileChooserFltkMenu.obj
+         x64\Release\FileRenderer.obj
+         x64\Release\FileRenderList.obj
+         x64\Release\fitrms.obj
+         x64\Release\FltkOpenGLDisplayDevice.obj
+         x64\Release\FPS.obj
+         x64\Release\frame_selector.obj
+         x64\Release\GelatoDisplayDevice.obj
+         x64\Release\GeometryAngle.obj
+         x64\Release\GeometryAtom.obj
+         x64\Release\GeometryBond.obj
+         x64\Release\GeometryDihedral.obj
+         x64\Release\GeometryFltkMenu.obj
+         x64\Release\GeometryList.obj
+         x64\Release\GeometryMol.obj
+         x64\Release\GeometrySpring.obj
+         x64\Release\GraphicsFltkMenu.obj
+         x64\Release\hash.obj
+         x64\Release\Hershey.obj
+         x64\Release\ImageIO.obj
+         x64\Release\imd.obj
+         x64\Release\IMDMgr.obj
+         x64\Release\IMDSim.obj
+         x64\Release\IMDSimBlocking.obj
+         x64\Release\IMDSimThread.obj
+         x64\Release\Inform.obj
+         x64\Release\inthash.obj
+         x64\Release\intstack.obj
+         x64\Release\Isocontour.obj
+         x64\Release\Isosurface.obj
+         x64\Release\JRegex.obj
+         x64\Release\JString.obj
+         x64\Release\MainFltkMenu.obj
+         x64\Release\MaterialFltkMenu.obj
+         x64\Release\MaterialList.obj
+         x64\Release\Matrix4.obj
+         x64\Release\MayaDisplayDevice.obj
+         x64\Release\MDFF.obj
+         x64\Release\Measure.obj
+         x64\Release\MeasureCluster.obj
+         x64\Release\MeasurePBC.obj
+         x64\Release\MeasureQCP.obj
+         x64\Release\MeasureRDF.obj
+         x64\Release\MeasureSurface.obj
+         x64\Release\MeasureSymmetry.obj
+         x64\Release\MobileButtons.obj
+         x64\Release\MobileInterface.obj
+         x64\Release\MobileTracker.obj
+         x64\Release\MolBrowser.obj
+         x64\Release\Molecule.obj
+         x64\Release\MoleculeGraphics.obj
+         x64\Release\MoleculeList.obj
+         x64\Release\MolFilePlugin.obj
+         x64\Release\Mouse.obj
+         x64\Release\msmpot.obj
+         x64\Release\msmpot_compute.obj
+         x64\Release\msmpot_cubic.obj
+         x64\Release\msmpot_setup.obj
+         x64\Release\MSMSInterface.obj
+         x64\Release\OpenCLOrbital.obj
+         x64\Release\OpenCLUtils.obj
+         x64\Release\OpenCLVolCPotential.obj
+         x64\Release\OpenGLCache.obj
+         x64\Release\OpenGLExtensions.obj
+         x64\Release\OpenGLRenderer.obj
+         x64\Release\OpenGLShader.obj
+         x64\Release\Orbital.obj
+         x64\Release\OrbitalJIT.obj
+         x64\Release\ParseTree.obj
+         x64\Release\pcre.obj
+         x64\Release\PeriodicTable.obj
+         x64\Release\PhoneButtons.obj
+         x64\Release\PhoneTracker.obj
+         x64\Release\PickList.obj
+         x64\Release\PickModeAddBond.obj
+         x64\Release\PickModeCenter.obj
+         x64\Release\PickModeForce.obj
+         x64\Release\PickModeList.obj
+         x64\Release\PickModeMolLabel.obj
+         x64\Release\PickModeMove.obj
+         x64\Release\PickModeUser.obj
+         x64\Release\PlainTextInterp.obj
+         x64\Release\PluginMgr.obj
+         x64\Release\POV3DisplayDevice.obj
+         x64\Release\PSDisplayDevice.obj
+         x64\Release\PythonTextInterp.obj
+         x64\Release\py_animate.obj
+         x64\Release\py_atomsel.obj
+         x64\Release\py_atomselection.obj
+         x64\Release\py_axes.obj
+         x64\Release\py_color.obj
+         x64\Release\py_commands.obj
+         x64\Release\py_display.obj
+         x64\Release\py_graphics.obj
+         x64\Release\py_imd.obj
+         x64\Release\py_label.obj
+         x64\Release\py_material.obj
+         x64\Release\py_measure.obj
+         x64\Release\py_menu.obj
+         x64\Release\py_molecule.obj
+         x64\Release\py_molrep.obj
+         x64\Release\py_mouse.obj
+         x64\Release\py_numeric.obj
+         x64\Release\py_render.obj
+         x64\Release\py_topo.obj
+         x64\Release\py_trans.obj
+         x64\Release\py_vmd.obj
+         x64\Release\P_Buttons.obj
+         x64\Release\P_CmdTool.obj
+         x64\Release\P_GrabTool.obj
+         x64\Release\P_JoystickButtons.obj
+         x64\Release\P_JoystickTool.obj
+         x64\Release\P_PinchTool.obj
+         x64\Release\P_PrintTool.obj
+         x64\Release\P_RotateTool.obj
+         x64\Release\P_SensorConfig.obj
+         x64\Release\P_Tool.obj
+         x64\Release\P_Tracker.obj
+         x64\Release\P_TugTool.obj
+         x64\Release\P_UIVR.obj
+         x64\Release\P_VRPNButtons.obj
+         x64\Release\P_VRPNFeedback.obj
+         x64\Release\P_VRPNTracker.obj
+         x64\Release\QMData.obj
+         x64\Release\QMTimestep.obj
+         x64\Release\QuickSurf.obj
+         x64\Release\R3dDisplayDevice.obj
+         x64\Release\RadianceDisplayDevice.obj
+         x64\Release\RayShadeDisplayDevice.obj
+         x64\Release\RenderFltkMenu.obj
+         x64\Release\RenderManDisplayDevice.obj
+         x64\Release\SaveTrajectoryFltkMenu.obj
+         x64\Release\Scene.obj
+         x64\Release\SelectionBuilder.obj
+         x64\Release\SnapshotDisplayDevice.obj
+         x64\Release\Spaceball.obj
+         x64\Release\SpaceballButtons.obj
+         x64\Release\SpaceballTracker.obj
+         x64\Release\SpatialSearch.obj
+         x64\Release\SpringTool.obj
+         x64\Release\Stage.obj
+         x64\Release\STLDisplayDevice.obj
+         x64\Release\Stride.obj
+         x64\Release\Surf.obj
+         x64\Release\SymbolTable.obj
+         x64\Release\TachyonDisplayDevice.obj
+         x64\Release\TclCommands.obj
+         x64\Release\TclGraphics.obj
+         x64\Release\TclMDFF.obj
+         x64\Release\TclMeasure.obj
+         x64\Release\TclMolInfo.obj
+         x64\Release\TclTextInterp.obj
+         x64\Release\TclVec.obj
+         x64\Release\TclVolMap.obj
+         x64\Release\tcl_commands.obj
+         x64\Release\Timestep.obj
+         x64\Release\ToolFltkMenu.obj
+         x64\Release\UIObject.obj
+         x64\Release\UIText.obj
+         x64\Release\utilities.obj
+         x64\Release\util_simd.obj
+         x64\Release\vmd.obj
+         x64\Release\VMDApp.obj
+         x64\Release\VMDCollab.obj
+         x64\Release\vmdconsole.obj
+         x64\Release\VMDDir.obj
+         x64\Release\VMDDisplayList.obj
+         x64\Release\vmddlopen.obj
+         x64\Release\VMDFltkMenu.obj
+         x64\Release\VMDMenu.obj
+         x64\Release\VMDMPI.obj
+         x64\Release\VMDQuat.obj
+         x64\Release\vmdsock.obj
+         x64\Release\VMDThreads.obj
+         x64\Release\VMDTitle.obj
+         x64\Release\VMDTkinterMenu.obj
+         x64\Release\VMDTkMenu.obj
+         x64\Release\VolCPotential.obj
+         x64\Release\VolMapCreate.obj
+         x64\Release\VolMapCreateILS.obj
+         x64\Release\VolumeTexture.obj
+         x64\Release\VolumetricData.obj
+         x64\Release\Vrml2DisplayDevice.obj
+         x64\Release\VrmlDisplayDevice.obj
+         x64\Release\WavefrontDisplayDevice.obj
+         x64\Release\Win32Joystick.obj
+         x64\Release\win32vmdstart.obj
+         x64\Release\WKFThreads.obj
+         x64\Release\WKFUtils.obj
+         x64\Release\X3DDisplayDevice.obj
+     1>LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
+         Generating code
+         Finished generating code
+     1>main.obj : warning LNK4049: locally defined symbol __glewAttachShader imported
+     1>main.obj : warning LNK4049: locally defined symbol __glewCreateProgram imported
+     1>main.obj : warning LNK4049: locally defined symbol __glewGetProgramInfoLog imported
+     1>main.obj : warning LNK4049: locally defined symbol __glewGetShaderiv imported
+     1>main.obj : warning LNK4049: locally defined symbol __glewGetProgramiv imported
+     1>main.obj : warning LNK4049: locally defined symbol __glewShaderSource imported
+     1>main.obj : warning LNK4049: locally defined symbol __glewUseProgram imported
+     1>main.obj : warning LNK4049: locally defined symbol __glewCompileShader imported
+     1>main.obj : warning LNK4049: locally defined symbol __glewLinkProgram imported
+     1>main.obj : warning LNK4049: locally defined symbol glewInit imported
+     1>main.obj : warning LNK4049: locally defined symbol __glewGetShaderInfoLog imported
+     1>main.obj : warning LNK4049: locally defined symbol __glewCreateShader imported
+     1>fltk.lib(filename_absolute.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(filename_absolute.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(filename_expand.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(filename_expand.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(filename_isdir.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(filename_isdir.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(filename_list.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(filename_list.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(filename_match.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(filename_match.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(flstring.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(flstring.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_abort.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_abort.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(fl_arci.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(fl_arci.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(fl_ask.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(fl_ask.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_Bitmap.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_Bitmap.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_Box.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_Box.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(fl_boxtype.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(fl_boxtype.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_Browser.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_Browser.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_Browser_.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_Browser_.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_Button.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_Button.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_Check_Button.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_Check_Button.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_Choice.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_Choice.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(fl_color.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(fl_color.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_compose.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_compose.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_Counter.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_Counter.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(fl_cursor.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(fl_cursor.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(fl_diamond_box.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(fl_diamond_box.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(fl_dnd.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(fl_dnd.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_Double_Window.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_Double_Window.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(fl_draw.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(fl_draw.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(fl_draw_image.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(fl_draw_image.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(fl_draw_pixmap.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(fl_draw_pixmap.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_File_Browser.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_File_Browser.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_File_Chooser.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_File_Chooser.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_File_Chooser2.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_File_Chooser2.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(fl_file_dir.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(fl_file_dir.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_File_Icon.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_File_Icon.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_File_Input.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_File_Input.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(fl_font.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(fl_font.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_get_system_colors.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_get_system_colors.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_grab.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_grab.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_Group.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_Group.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(fl_gtk.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(fl_gtk.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_Image.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_Image.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_Input.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_Input.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_Input_.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_Input_.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(fl_labeltype.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(fl_labeltype.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_Light_Button.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_Light_Button.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(fl_line_style.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(fl_line_style.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_lock.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_lock.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_Menu.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_Menu.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_Menu_.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_Menu_.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_Menu_add.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_Menu_add.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_Menu_Bar.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_Menu_Bar.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_Menu_Button.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_Menu_Button.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_Menu_Window.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_Menu_Window.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_Pixmap.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_Pixmap.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(fl_plastic.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(fl_plastic.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_Positioner.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_Positioner.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_Preferences.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_Preferences.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(fl_rect.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(fl_rect.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_Return_Button.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_Return_Button.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(fl_round_box.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(fl_round_box.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_Round_Button.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_Round_Button.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_Scrollbar.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_Scrollbar.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_Shared_Image.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_Shared_Image.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(fl_shortcut.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(fl_shortcut.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_Single_Window.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_Single_Window.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_Slider.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_Slider.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(fl_symbols.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(fl_symbols.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_Tabs.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_Tabs.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_Tile.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_Tile.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_Tiled_Image.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_Tiled_Image.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_Tooltip.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_Tooltip.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_Valuator.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_Valuator.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_Value_Input.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_Value_Input.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_Value_Slider.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_Value_Slider.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(fl_vertex.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(fl_vertex.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_visual.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_visual.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_Widget.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_Widget.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_Window.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_Window.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_Window_hotspot.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_Window_hotspot.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_XBM_Image.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_XBM_Image.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(Fl_XPM_Image.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(Fl_XPM_Image.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(numericsort.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(numericsort.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(scandir.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(scandir.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(screen_xywh.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(screen_xywh.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltk.lib(vsnprintf.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltk.lib(vsnprintf.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltkgl.lib(Fl_Gl_Choice.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltkgl.lib(Fl_Gl_Choice.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltkgl.lib(Fl_Gl_Window.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltkgl.lib(Fl_Gl_Window.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>fltkgl.lib(gl_draw.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'fltkgl.lib(gl_draw.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+     1>glew32s.lib(glew.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'glew32s.lib(glew.obj)' or at 'S:\apps\dual_test\VMD\SDK\bin64\vc120.pdb'; linking object as if no debug info
+         FionaVMD.vcxproj -> S:\apps\dual_test\VMD\SDK\bin64\FionaVMD.exe
+     1>Done Building Project "S:\apps\dual_test\VMD\FionaVMD.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:27.30

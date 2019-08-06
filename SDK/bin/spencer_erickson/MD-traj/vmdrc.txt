@@ -1,0 +1,443 @@
+
+# add personalized keyboard shortcuts 
+user add key E echo on
+user add key e echo off
+user add key g display reset
+user add key A stage location bottom
+user add key m mol list
+
+# position the stage and axes
+axes location lowerleft
+stage location off
+
+# position and turn on menus
+menu main move 5 196
+menu display move 386 90
+menu animate move 124 7
+menu edit move 125 196
+menu graphics move 5 455
+menu files move 5 496
+menu mol move 5 745
+
+menu main on
+
+# start the scene a-rockin'
+rock y by 1
+
+############################################################
+# define global variable to store X window id.
+set vmd_opengl_wid -1
+global vmd_opengl_wid
+
+# callback function to be called when the top molecule changes
+proc vmd_change_opengl_name {args} {
+    global vmd_opengl_wid
+    if {[molinfo num] < 1} return
+
+    if {[llength $args] == 0} {
+        set name [join [molinfo top get name]]
+    } else {
+        set name [lindex $args 0]
+        if { [string equal $name vmd_molecule] } {
+            set name [join [molinfo top get name]]
+        }
+    }
+    if {$vmd_opengl_wid > 0} {
+        catch {exec xprop -id $vmd_opengl_wid \
+            -set WM_NAME "VMD [vmdinfo version]: $name"}
+        catch {exec xprop -id $vmd_opengl_wid \
+            -set WM_ICON_NAME $name}
+    }
+}
+
+# activate callback
+trace variable vmd_molecule w vmd_change_opengl_name
+
+# record window id for automatic title change
+after idle {
+    global vmd_opengl_wid
+    if {![catch {exec xwininfo -name \
+        "VMD [vmdinfo version] OpenGL Display"} val ]} {
+        set vmd_opengl_wid [lindex $val 3]
+    }
+    vmd_change_opengl_name
+}
+
+
+#######################################################
+proc geom_center {selection} {
+        # set the geometrical center to 0
+        set gc [veczero]
+        # [$selection get {x y z}] returns a list of {x y z} 
+        #    values (one per atoms) so get each term one by one
+        foreach coord [$selection get {x y z}] {
+           # sum up the coordinates
+           set gc [vecadd $gc $coord]
+        }
+        # and scale by the inverse of the number of atoms
+        return [vecscale [expr 1.0 /[$selection num]] $gc]
+}
+
+#######################################################
+proc center_of_mass {selection} {
+        # some error checking
+        if {[$selection num] <= 0} {
+                error "center_of_mass: needs a selection with atoms"
+        }
+        # set the center of mass to 0
+        set com [veczero]
+        # set the total mass to 0
+        set mass 0
+        # [$selection get {x y z}] returns the coordinates {x y z} 
+        # [$selection get {mass}] returns the masses
+        # so the following says "for each pair of {coordinates} and masses,
+	#  do the computation ..."
+        foreach coord [$selection get {x y z}] m [$selection get mass] {
+           # sum of the masses
+           set mass [expr $mass + $m]
+           # sum up the product of mass and coordinate
+           set com [vecadd $com [vecscale $m $coord]]
+        }
+        # and scale by the inverse of the number of atoms
+        if {$mass == 0} {
+                error "center_of_mass: total mass is zero"
+        }
+        # The "1.0" can't be "1", since otherwise integer division is done
+        return [vecscale [expr 1.0/$mass] $com]
+}
+
+############################################
+
+proc align_frames_allatoms { molid } {
+    set nf [molinfo $molid get numframes]
+    puts "number of frames loaded: $nf"
+    for { set i 1 } { $i <= $nf } { incr i } {
+        set prot_frame [atomselect $molid "all" frame $i]
+        set reference0 [atomselect $molid "all" frame 0]
+        set transformation_matrix [measure fit $prot_frame $reference0]
+        set move_sel [atomselect $molid "all" frame $i]
+        $move_sel move $transformation_matrix
+    }
+}
+
+
+proc align_frames_alpha { molid } {
+    set nf [molinfo $molid get numframes]
+    puts "number of frames loaded: $nf"
+    for { set i 1 } { $i <= $nf } { incr i } {
+        set prot_frame [atomselect $molid "alpha" frame $i]
+        set reference0 [atomselect $molid "alpha" frame 0]
+        set transformation_matrix [measure fit $prot_frame $reference0]
+        set move_sel [atomselect $molid "all" frame $i]
+        $move_sel move $transformation_matrix
+    }
+}
+
+# align_frames 1 0 <= will align molid1 to initial frame of molid0
+proc align_frames_alpha_2 { move_molid ref_molid } {
+    set nf [molinfo $move_molid get numframes]
+    puts "number of frames loaded: $nf"
+    for { set i 1 } { $i <= $nf } { incr i } {
+        set prot_frame [atomselect $move_molid "alpha" frame $i]
+        set reference0 [atomselect $ref_molid "alpha" frame 0]
+        set transformation_matrix [measure fit $prot_frame $reference0]
+        set move_sel [atomselect $move_molid "all" frame $i]
+        $move_sel move $transformation_matrix
+    }
+}
+
+proc align_frames_dna { molid } {
+    set nf [molinfo $molid get numframes]
+    puts "number of frames loaded: $nf"
+    for { set i 1 } { $i <= $nf } { incr i } {
+        set prot_frame [atomselect $molid "name C1' P" frame $i]
+        set reference0 [atomselect $molid "name C1' P" frame 0]
+        set transformation_matrix [measure fit $prot_frame $reference0]
+        set move_sel [atomselect $molid "all" frame $i]
+        $move_sel move $transformation_matrix
+    }
+}
+
+proc align_frames_dna_2 { move_molid ref_molid } {
+    set nf [molinfo $move_molid get numframes]
+    puts "number of frames loaded: $nf"
+    for { set i 1 } { $i <= $nf } { incr i } {
+        set prot_frame [atomselect $move_molid "name C1' P" frame $i]
+        set reference0 [atomselect $ref_molid "name C1' P" frame 0]
+        set transformation_matrix [measure fit $prot_frame $reference0]
+        set move_sel [atomselect $move_molid "all" frame $i]
+        $move_sel move $transformation_matrix
+    }
+}
+
+
+#############################################################################
+#
+# NAME 
+#        rmsd_matrix - calculates a matrix of rmsd between each given 
+#                      frame in a trajectory
+#
+# SYNOPSIS 
+#        rmsd_matrix -mol [top] -seltext [backbone] -frames [all] 
+#              -fit [backbone] -o <filename>
+#
+# DESCRIPTION
+#        This VMD script calculates the RMSD between every given frame in a
+#        trajectory and saves it to a file, which you can plot with your
+#        favorite program. By default, the rmsd is calculated based on the
+#        backbone. An initial least-squares fit of all given frames with
+#        respect to the first given frame is always performed, unless the
+#        option '-fit none' is used. By default, the initial fitting is
+#        based on the backbone.
+#
+#        -mol 
+#             molid (default: top)
+#    
+#        -seltext
+#             an atom selection to calculate the rmsd is generated based on
+#             this option (default: backbone)
+#    
+#        -frames
+#             frames used in the analysis, following the common syntax used
+#             in VMD: <begin:end> or <begin:step:end> or all or now
+#             (default: all)
+#    
+#        -fit
+#             a least-squares fit is performed by default, using an atom
+#             selection generated based on this option (default: backbone);
+#             to disable the initial fitting, use -fit none
+#    
+#        -o
+#             output file name (if not specified, data is printed on the
+#             screen)
+#    
+# AUTHOR
+#        Leonardo Trabuco <ltrabuco@ks.uiuc.edu>
+#
+# 05/19/2006
+#
+#############################################################################
+    
+namespace eval ::RMSDmatrix:: {
+    
+    variable debug 0
+    variable seltext "backbone"
+    variable fit_seltext "backbone"
+
+}
+
+proc rmsd_matrix { args } { return [eval ::RMSDmatrix::rmsd_matrix $args] }
+
+# most of the parsing comes from pmepot
+proc ::RMSDmatrix::rmsd_matrix { args } {
+
+    variable debug
+    variable seltext
+    variable fit_seltext
+
+    set nargs [llength $args]
+    if {$nargs % 2} {
+	puts "usage: rmsd_matrix ?-arg var?..."
+	puts "  -mol <molid> (default: top)"
+	puts "  -seltext <selection text> (default: backbone)"
+	puts "  -frames <begin:end> or <begin:step:end> or all or now (default: all)"
+	puts "  -fit <selection text> (default: backbone)"
+	puts "  -o <filename>"
+	error "error: empty argument list or odd number of arguments $args"
+    }
+    foreach {name val} $args {
+	switch -- $name {
+	    -mol { set arg(molid) $val }
+	    -seltext { set arg(seltext) $val }
+	    -frames { set arg(frames) $val }
+	    -fit { set arg(fit) $val }
+	    -o { set arg(o) $val }
+	    default { error "unkown argument: $name $val" }
+	}
+    }
+
+    # if 'molid' was not specified, default to top
+    if [info exists arg(molid)] {
+	set molid $arg(molid)
+    } else {
+	set molid [molinfo top]
+    }
+
+    # get selection text for the rmsd calculations
+    if [info exists arg(seltext)] {
+	set seltext $arg(seltext)
+    }
+
+    # get frames
+    set nowframe [molinfo $molid get frame]
+    set lastframe [expr [molinfo $molid get numframes] - 1]
+    if [info exists arg(frames)] {
+      set fl [split $arg(frames) :]
+      switch -- [llength $fl] {
+        1 {
+          switch -- $fl {
+            all {
+              set frames_begin 0
+              set frames_end $lastframe
+            }
+            now {
+              set frames_begin $nowframe
+            }
+            last {
+              set frames_begin $lastframe
+            }
+            default {
+              set frames_begin $fl
+            }
+          }
+        }
+        2 {
+          set frames_begin [lindex $fl 0]
+          set frames_end [lindex $fl 1]
+        }
+        3 {
+          set frames_begin [lindex $fl 0]
+          set frames_step [lindex $fl 1]
+          set frames_end [lindex $fl 2]
+        }
+        default { error "bad -frames arg: $arg(frames)" }
+      }
+    } else {
+      set frames_begin 0
+    }
+    if { ! [info exists frames_step] } { set frames_step 1 }
+    if { ! [info exists frames_end] } { set frames_end $lastframe }
+    switch -- $frames_end {
+      end - last { set frames_end $lastframe }
+    }
+    if { [ catch {
+      if { $frames_begin < 0 } {
+        set frames_begin [expr $lastframe + 1 + $frames_begin]
+      }
+      if { $frames_end < 0 } {
+        set frames_end [expr $lastframe + 1 + $frames_end]
+      }
+      if { ! ( [string is integer $frames_begin] && \
+  	   ( $frames_begin >= 0 ) && ( $frames_begin <= $lastframe ) && \
+  	   [string is integer $frames_end] && \
+  	   ( $frames_end >= 0 ) && ( $frames_end <= $lastframe ) && \
+  	   ( $frames_begin <= $frames_end ) && \
+  	   [string is integer $frames_step] && ( $frames_step > 0 ) ) } {
+        error
+      }
+    } ok ] } { error "bad -frames arg: $arg(frames)" }
+    if $debug {
+      puts "frames_begin: $frames_begin"
+      puts "frames_step: $frames_step"
+      puts "frames_end: $frames_end"
+    }
+
+    # get selection text to use for fitting
+    if [info exists arg(fit)] {
+	set fit_seltext $arg(fit)
+    } else {
+	set fit_seltext "backbone"
+    }
+
+    # get output filename (defaults to stdout for now)
+    if [info exists arg(o)] {
+	set outfile [open $arg(o) w]
+    } else {
+	set outfile "stdout"
+    }
+
+    # create two selections to calculate the rmsd matrix
+    set sel1 [atomselect $molid "$seltext"]
+    set sel2 [atomselect $molid "$seltext"]
+    set natoms [$sel1 num]
+
+    # create selections to use for fitting
+    set fit1sel [atomselect $molid "$fit_seltext"]
+    set fit2sel [atomselect $molid "$fit_seltext"]
+    set selall [atomselect $molid all]
+ 
+    if { $fit_seltext != "none" } {
+        $fit1sel frame $frames_begin
+        for { set f $frames_begin } { $f <= $frames_end } { incr f $frames_step } {
+	   $fit2sel frame $f
+	   $selall frame $f
+	   $selall move [measure fit $fit2sel $fit1sel]
+        }
+    }
+
+    puts "Calculating the RMSD matrix..."
+
+    for { set f1 $frames_begin } { $f1 <= $frames_end } { incr f1 $frames_step } {
+	$sel1 frame $f1
+        set coords1 [$sel1 get {x y z}]
+	for { set f2 $f1 } { $f2 <= $frames_end } { incr f2 $frames_step } {
+	    $sel2 frame $f2
+	    set coords2 [$sel2 get {x y z}]
+	    set rmsd 0
+	    foreach coord1 $coords1 coord2 $coords2 {
+		set rmsd [expr $rmsd + [veclength2 [vecsub $coord2 $coord1]]]
+            }
+            # divide by the number of atoms and return the result
+	    set rmsd_matrix($f1,$f2)  [expr $rmsd / ($natoms + 0.0)]
+	    set rmsd_matrix($f2,$f1)  $rmsd_matrix($f1,$f2)
+        }
+    }
+    
+    for { set f1 $frames_begin } { $f1 <= $frames_end } { incr f1 $frames_step } {
+         for { set f2 $frames_begin } { $f2 <= $frames_end } { incr f2 $frames_step } {
+             puts -nonewline $outfile "$rmsd_matrix($f1,$f2) "
+         }
+         puts $outfile ""
+    }
+
+    $sel1 delete
+    $sel2 delete
+    $fit1sel delete
+    $fit2sel delete
+    $selall delete
+    if { $outfile != "stdout" } {
+        close $outfile
+    }
+
+}
+
+
+
+proc box_molecule {molid} {
+      # get the min and max values for each of the directions
+      # (I'm not sure if this is the best way ... )
+      set sel [atomselect top all]
+
+      set coords [lsort -real [$sel get x]]
+      set minx [lindex $coords 0]
+      set maxx [lindex [lsort -real -decreasing $coords] 0]
+
+      set coords [lsort -real [$sel get y]]
+      set miny [lindex $coords 0]
+      set maxy [lindex [lsort -real -decreasing $coords] 0]
+
+      set coords [lsort -real [$sel get z]]
+      set minz [lindex $coords 0]
+      set maxz [lindex [lsort -real -decreasing $coords] 0]
+
+      # and draw the lines
+      draw materials off
+      draw color yellow
+      draw line "$minx $miny $minz" "$maxx $miny $minz"
+      draw line "$minx $miny $minz" "$minx $maxy $minz"
+      draw line "$minx $miny $minz" "$minx $miny $maxz"
+
+      draw line "$maxx $miny $minz" "$maxx $maxy $minz"
+      draw line "$maxx $miny $minz" "$maxx $miny $maxz"
+
+      draw line "$minx $maxy $minz" "$maxx $maxy $minz"
+      draw line "$minx $maxy $minz" "$minx $maxy $maxz"
+
+      draw line "$minx $miny $maxz" "$maxx $miny $maxz"
+      draw line "$minx $miny $maxz" "$minx $maxy $maxz"
+
+      draw line "$maxx $maxy $maxz" "$maxx $maxy $minz"
+      draw line "$maxx $maxy $maxz" "$minx $maxy $maxz"
+      draw line "$maxx $maxy $maxz" "$maxx $miny $maxz"
+}
+

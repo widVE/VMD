@@ -1,0 +1,16 @@
+Simulation of TAK-442: a potent, selective and orally active inhibitor bound in protease enzyme coagulation factor Xa.
+
+The visualization is based on a 10 nanosecond segment from a molecular dynamics simulation of the factor Xa protein bound to TAK-442 in a box of water (and 0.100 molar NaCl) (salt ions and water not shown) at constant T and P (310 Kelvin and 1 atmosphere of pressure). This was cut from a longer simulation of 1000 nanoseconds.
+
+FA10 (Factor Xa) is an enzyme involved in blood coagulation mechanism and a promising target for new anticoagulant agents.
+
+This starting structure is from a crystal structure deposited in RCSB accession code: 3KL6
+
+This ligand-bound enzyme complex was chosen for its superb resolution and great enrichment in docking studies of decoys vs. known actives.
+
+Fujimoto, T., Imaeda, Y., Konishi, N., Hiroe, K., Kawamura, M., Textor, G.P., Aertgeerts, K., Kubo, K. (2010) "Discovery of a tetrahydropyrimidin-2(1H)-one derivative (TAK-442) as a potent, selective, and orally active factor Xa inhibitor." J.Med.Chem. 53: 3517-3531. DOI: 10.1021/jm901699j
+
+PubMed Abstract: 
+Coagulation enzyme factor Xa (FXa) is a particularly promising target for the development of new anticoagulant agents. We previously reported the imidazo[1,5-c]imidazol-3-one derivative 1 as a potent and orally active FXa inhibitor. However, it was found that 1 predominantly undergoes hydrolysis upon incubation with human liver microsomes, and the human specific metabolic pathway made it difficult to predict the human pharmacokinetics. To address this issue, our synthetic efforts were focused on modification of the imidazo[1,5-c]imidazol-3-one moiety of the active metabolite 3a, derived from 1, which resulted in the discovery of the tetrahydropyrimidin-2(1H)-one derivative 5k (TAK-442) as a highly potent and selective FXa inhibitor. Compound 5k showed no detectable amide bond cleavage in human liver microsomes, exhibited a good pharmacokinetic profile in monkeys, and had a potent antithrombotic efficacy in a rabbit model without prolongation of bleeding time. Compound 5k is currently under clinical development with the code name TAK-442.
+
+

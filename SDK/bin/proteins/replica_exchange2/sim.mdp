@@ -1,0 +1,115 @@
+title			= modX 300 330 1 ns 
+
+
+; Run parameters
+integrator	        = md	   	; leap-frog integrator
+tinit			= 500001	; start time for the very first part of this simulation
+nsteps		        = 500000 	; 5.0E6 steps = 1E7 fs = 1E4 ps = 1 ns
+dt		        = 0.002	   	; 2 fs
+init-step               = 500001	; step number from which this simulation is to start 
+simulation-part         = 1
+comm-mode               = Linear
+nstcomm                 = 100
+
+
+; OUTPUT CONTROL OPTIONS
+; Output frequency for coords (x), velocities (v) and forces (f)
+nstxout		        = 0	    ; suppress .trr output (save coordinates every N steps)
+nstvout		        = 0	    ; suppress .??? output (save velocities every N steps)
+nstenergy	        = 5000	    ; save energies every 10.0 ps
+nstlog                  = 5000      ; update log file every 10.0 ps
+;nstcalenergy		= 500	    ; steps between calc energies--equal or multiple 
+				    ; of nstlist--effects performance in parallel sims 
+			            ; since requires global communication between all 
+			            ; processes (potential bottleneck)
+nstxout-compressed      = 5000      ; write .xtc compressed coordinates every 5000 steps (10.0 ps)
+                                    ; nstxout-compressed replaces nstxtcout
+compressed-x-grps       = System    ; replaces xtc-grps
+compressed-x-precision  = 5000
+xtc-grps                =	    ; This selects the subset of atoms for the .xtc file. You can
+				    ; select multiple groups. By default all atoms will be written.
+energygrps              =	    ; Selection of energy groups (dump energy total for group)
+
+
+; Bond parameters
+continuation		= yes	    ; starting from checkpoint from equil (NPT)
+constraint_algorithm    = lincs	    ; holonomic constraints 
+constraints	        = all-bonds ; all bonds (even heavy atom-H bonds) constrained
+lincs_iter	        = 1	    ; accuracy of LINCS
+lincs_order	        = 4	    ; also related to accuracy
+;ncs-warnangle           = 30
+morse                   = no
+Shake-SOR               = no
+shake-tol               = 0.0001
+
+
+; NEIGHBORSEARCHING PARAMETERS
+cutoff-scheme           = Verlet
+nstlist                 = 10	    ; 20 fs, largely irrelevant with Verlet scheme
+ns-type                 = Grid     ; search neighboring grid cells
+pbc                     = xyz		; 3-D PBC
+;periodic-molecules     = no
+verlet-buffer-tolerance = 0.005	   ; Allowed energy drift due to the 
+				   ; Verlet buffer in kJ/mol/ps per atom,
+				   ; a value of -1 means: use rlist
+rlist                   = 1
+rlistlong               = -1
+nstcalclr               = -1
+
+
+; OPTIONS FOR ELECTROSTATICS AND VDW
+coulombtype              = PME	    ; Particle Mesh Ewald for long-range electrostatics
+coulomb-modifier         = Potential-shift-Verlet
+rcoulomb-switch          = 0
+rcoulomb                 = 1.0	    ; short-range electrostatic cutoff (in nm)
+epsilon-r                = 1
+epsilon-rf               = 0
+vdw-type                 = Cut-off
+vdw-modifier             = Potential-shift-Verlet
+rvdw-switch              = 0
+rvdw                     = 1	    ; short-range van der Waals cutoff (in nm)
+; DISPERSION CORRECTION
+;DispCorr                 = No
+DispCorr                 = EnerPres      ; account for cut-off vdW scheme
+
+table-extension          = 1
+energygrp-table          =
+fourierspacing           = 0.12		; grid spacing for FFT
+fourier-nx               = 0
+fourier-ny               = 0
+fourier-nz               = 0
+
+
+; EWALD/PME/PPPM parameters
+pme-order                = 4	   ; cubic interpolation
+ewald-rtol               = 1e-05
+ewald-geometry           = 3d
+epsilon-surface          = 0
+;optimize-fft             = no
+
+
+; IMPLICIT SOLVENT ALGORITHM
+implicit-solvent         = No
+
+
+; OPTIONS FOR WEAK COUPLING ALGORITHMS
+tcoupl                   = v-rescale            ; modified Berendsen thermostat
+nsttcouple               = -1
+nh-chain-length          = 10
+print-nose-hoover-chain-variables = no
+tc-grps                 = Protein_lig Water_and_ions    ; two coupling groups - more accurate
+tau_t                   = 0.1 0.1           ; time constant, in ps
+ref_t                   = TEMPXXX TEMPXXX   ; reference temperature, one for each group, in K
+nstpcouple              = -1
+refcoord-scaling        = No
+pcoupl			= Berendsen	; Pressure coupling on in NPT (used Parrinello-Rahman in tutorial)
+pcoupltype	        = isotropic	       ; uniform scaling of box vectors
+tau_p		        = 2.0		       ; time constant, in ps
+ref_p		        = 1.0		       ; reference pressure, in bar
+compressibility     	= 4.5e-5	       ; isothermal compressibility of water, bar^-1
+
+
+; GENERATE VELOCITIES FOR STARTUP RUN
+gen-vel                 = no		  ; Velocity generation is off
+;gen-temp                 = TEMPXXX
+;gen-seed                 = 173529

@@ -1,0 +1,70 @@
+VMD Color Types:
+
+  "Name",     "Type",     "Element",
+  "ResName",  "ResType",  "ResID",    
+  "Chain",    "SegName",  "Conformation",
+  "Molecule", "Structure", 
+  "ColorID",  "Beta",     "Occupancy", 
+  "Mass",     "Charge",   
+  "Pos",      "PosX",     "PosY",  "PosZ", 
+  "User",     "User2",    "User3", "User4", "Fragment",
+  "Index",    "Backbone", "Throb",
+  "PhysicalTime", "Timestep", "Velocity", "Volume"
+
+VMD Drawing Type:
+
+Lines
+Bonds
+HBonds
+Dynamic Bonds
+Points
+VDW (spheres)
+CPK (ball + stick)
+Licorice
+Polyhedra
+Trace
+Tube
+Ribbons
+NewRibbons
+Cartoon
+PaperChain
+Twister
+QuickSurf
+MSMS
+Surf
+VolumeSlice
+Isosurface
+FieldLines
+Orbital
+Beads
+Dotted
+Solvent
+
+VMD Materials:
+Opaque
+Transparent
+BrushedMetal
+Diffuse
+Ghost
+Glass1
+Glass2
+Glass3
+Glossy
+HardPlastic
+MetallicPastel
+Steel
+Translucent
+Edgy
+EdgyShiny
+EdgyGlass
+Goodsell
+AOShiny
+AOChalky
+AOEdgy
+BlownGlass
+GlassBubble
+
+
+
+
+
