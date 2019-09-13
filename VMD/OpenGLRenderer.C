@@ -3224,6 +3224,22 @@ for (int pbcimage = 0; pbcimage < nimages; pbcimage++) {
 
           ind = 0;
           for (i=0; i<sa->numspheres; i++) {
+
+			GLint cLoc = GLGETUNIFORMLOCATIONARB(sphereshader->ProgramObject, "sphereCenter");
+			GLfloat fCenter[3];
+			fCenter[0] = centers[ind];
+			fCenter[1] = centers[ind+1];
+			fCenter[2] = centers[ind+2];
+
+			GLUNIFORM3FVARB(cLoc, 1, fCenter);
+
+			cLoc = GLGETUNIFORMLOCATIONARB(sphereshader->ProgramObject, "sphereRadius");
+			GLfloat fRadii[3];
+			fRadii[0] = radii[i];
+			fRadii[1] = radii[i];
+			fRadii[2] = radii[i];
+			GLUNIFORM3FVARB(cLoc, 1, fRadii);
+
             glPushMatrix();
             glTranslatef(centers[ind], centers[ind + 1], centers[ind + 2]); 
             glScalef(radii[i], radii[i], radii[i]);

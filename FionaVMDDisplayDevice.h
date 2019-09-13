@@ -18,6 +18,8 @@ public:
 	virtual void update(int do_update = TRUE);   ///< prevent buffer swaps 
 
 protected:
+	virtual int do_define_light(int n, float *color, float *position);
+	virtual void update_shader_uniforms(void *voidshader, int forceupdate);
 
 private:
 	int doneGLInit;                ///< have we initialized the graphics yet?

@@ -13,7 +13,7 @@
 
 //#include "Inform.h"
 #include "FionaVMD.h"
-//#include "FionaUT.h"
+#include "FionaUT.h"
 #include "FionaVMDDisplayDevice.h"
 
 
@@ -127,6 +127,86 @@ void FionaVMDDisplayDevice::normal(void) {
 
 }
 
+int FionaVMDDisplayDevice::do_define_light(int n, float *color, float *position)
+{
+	//return OpenGLRenderer::do_define_light(n, color, position);
+
+	/*jvec3 viewDir = fionaConf.headRot.rot(-ZAXIS);
+	viewDir = fionaConf.camRot.rot(viewDir);
+	viewDir = viewDir.normalize();
+
+	glLightfv((GLenum)(GL_LIGHT0 + n), GL_POSITION, &ogl_lightpos[n][0]);
+
+	ogl_rendstateserial++; // cause GLSL cached state to update when necessary
+	_needRedraw = 1;
+	return TRUE;*/
+
+	float fEyeDir[3] = { 0.f, 0.f, -1.f };
+	jvec3 viewDir = fionaConf.headRot.rot(-ZAXIS);
+	viewDir = fionaConf.camRot.rot(viewDir);
+	viewDir = viewDir.normalize();
+	fEyeDir[0] = viewDir.x;
+	fEyeDir[1] = viewDir.y;
+	fEyeDir[2] = viewDir.z;
+
+	int i;
+
+	for (i = 0; i < 3; i++)  {
+		ogl_lightcolor[n][i] = color[i];
+		if (n == 0)
+		{
+			ogl_lightpos[n][i] = fEyeDir[i];
+		}
+		else
+		{
+			ogl_lightpos[n][i] = position[i];
+		}
+	}
+	ogl_lightpos[n][3] = 0.0; // directional lights require w=0.0 otherwise
+	// OpenGL assumes they are positional lights.
+	ogl_lightcolor[n][3] = 1.0;
+
+	// normalize the light direction vector
+	vec_normalize(&ogl_lightpos[n][0]); // 4th element is left alone
+
+	glLightfv((GLenum)(GL_LIGHT0 + n), GL_POSITION, &ogl_lightpos[n][0]);
+	glLightfv((GLenum)(GL_LIGHT0 + n), GL_SPECULAR, &ogl_lightcolor[n][0]);
+
+	ogl_rendstateserial++; // cause GLSL cached state to update when necessary
+	_needRedraw = 1;
+	return TRUE;
+}
+
+void FionaVMDDisplayDevice::update_shader_uniforms(void *voidshader, int forceupdate)
+{
+	OpenGLRenderer::update_shader_uniforms(voidshader, forceupdate);
+
+#if defined(VMDUSEOPENGLSHADER)
+	OpenGLShader *sh = (OpenGLShader *)voidshader;
+	GLint loc;
+
+	GLfloat eyePos[3];
+	jvec3 vEye = fionaConf.camPos + fionaConf.camRot.rot(fionaConf.headPos);
+	eyePos[0] = vEye.x;
+	eyePos[1] = vEye.y;
+	eyePos[2] = vEye.z;
+
+	loc = GLGETUNIFORMLOCATIONARB(sh->ProgramObject, "eyePos");
+	GLUNIFORM3FVARB(loc, 1, eyePos);
+
+	GLfloat fEyeDir[3] = { 0.f, 0.f, -1.f };
+	jvec3 viewDir = fionaConf.headRot.rot(-ZAXIS);
+	viewDir = fionaConf.camRot.rot(viewDir);
+	viewDir = viewDir.normalize();
+	fEyeDir[0] = viewDir.x;
+	fEyeDir[1] = viewDir.y;
+	fEyeDir[2] = viewDir.z;
+
+	loc = GLGETUNIFORMLOCATIONARB(sh->ProgramObject, "eyeDir");
+	GLUNIFORM3FVARB(loc, 1, fEyeDir);
+#endif
+}
+
 // special render routine to check for graphics initialization
 void FionaVMDDisplayDevice::render(const VMDDisplayList *cmdlist) {
   if(!doneGLInit) {
@@ -156,14 +236,27 @@ void FionaVMDDisplayDevice::render(const VMDDisplayList *cmdlist) {
   //fEyeDir[0] = ogl_mvmatrix[8];
   //fEyeDir[1] = ogl_mvmatrix[9];
   //fEyeDir[2] = ogl_mvmatrix[10];
-  fEyeDir[0] = ogl_mvmatrix[2];
+  
+  /*fEyeDir[0] = ogl_mvmatrix[2];
   fEyeDir[1] = ogl_mvmatrix[6];
   fEyeDir[2] = ogl_mvmatrix[10];
   jvec3 vED(fEyeDir[0], fEyeDir[1], fEyeDir[2]);
   vED = vED.normalize();
   fEyeDir[0] = vED.x;
   fEyeDir[1] = vED.y;
-  fEyeDir[2] = vED.z;
+  fEyeDir[2] = vED.z;*/
+
+  jvec3 viewDir = fionaConf.headRot.rot(-ZAXIS);
+  viewDir = fionaConf.camRot.rot(viewDir);
+  viewDir = viewDir.normalize();
+  fEyeDir[0] = viewDir.x;
+  fEyeDir[1] = viewDir.y;
+  fEyeDir[2] = viewDir.z;
+
+  //ogl_lightpos[0][0] = viewDir.x;
+  //ogl_lightpos[0][1] = viewDir.y;
+  //ogl_lightpos[0][2] = viewDir.z;
+
   OpenGLRenderer::set_eye_dir(fEyeDir);
   /*OpenGLRenderer::set_eye_pos(fEyePos);
   OpenGLRenderer::set_eye_up(fEyeUp);*/

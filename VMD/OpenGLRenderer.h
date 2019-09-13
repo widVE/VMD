@@ -233,7 +233,7 @@ protected:
   //
   /// Update the OpenGL sphere/cylinder/etc display lists
   void update_lists(void);
-  void update_shader_uniforms(void *, int forceupdate);
+  virtual void update_shader_uniforms(void *voidshader, int forceupdate);
 
   //@{
   /// routines to perform various OGL-specific graphics operations

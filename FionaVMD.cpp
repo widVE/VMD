@@ -36,6 +36,33 @@ void FionaVMD::buttons(int button, int state)
 	{
 		m_buttons |= (1<<button);
 	}
+
+	if (button == 1)
+	{
+		jvec3 vTemp = camPos;
+		quat qTemp = camOri;
+		camPos = oldCamPos;
+		camOri = oldCamOri;
+		oldCamPos = vTemp;
+		oldCamOri = qTemp;
+		printf("Previous position\n");
+	}
+	else if (button == 3)
+	{
+		jvec3 vTemp = camPos;
+		quat qTemp = camOri;
+		camPos = oldCamPos;
+		camOri = oldCamOri;
+		oldCamPos = vTemp;
+		oldCamOri = qTemp;
+		printf("Next position\n");
+	}
+	else if (button == 2)
+	{
+		oldCamPos = camPos;
+		oldCamOri = camOri;
+		printf("Saved position\n");
+	}
 }
 
 void FionaVMD::executeCommand(const char *sCmd)
@@ -75,6 +102,9 @@ void FionaVMD::render(void)
 		}
 
 		FionaScene::render();
+		
+		fionaConf.camRot = camOri;
+		fionaConf.camPos = camPos;
 
 		//VMDupdateFltk();
 		// take over the console

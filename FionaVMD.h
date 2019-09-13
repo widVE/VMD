@@ -26,6 +26,10 @@ protected:
 private:
 	bool initialized;
 	int	m_buttons;
+
+	jvec3 oldCamPos;
+	quat oldCamOri;
+
 };
 
 #endif

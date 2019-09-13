@@ -35,6 +35,11 @@
 uniform int vmdprojectionmode;   // perspective=1 orthographic=0
 uniform int vmdtexturemode;      // VMD texture mode
 
+uniform vec3 eyePos;
+uniform vec3 eyeDir;
+uniform vec3 sphereCenter;
+uniform vec3 sphereRadius;
+
 // 
 // Outputs to fragment shader
 //
@@ -59,7 +64,7 @@ void main(void) {
   // Sphere-specific rendering calculations
   // Transform sphere location
   vec4 spos = gl_ModelViewMatrix * vec4(0, 0, 0, 1.0);
-  spherepos = vec3(spos) / spos.w;
+  spherepos = vec3(spos) / spos.w;//sphereCenter;//vec3(spos) / spos.w;
 
   // setup fog coordinate for fragment shader, use sphere center
   gl_FogFragCoord = abs(spos.z);
@@ -69,11 +74,13 @@ void main(void) {
   sphereradsq = length(spherepos - (vec3(rspos) / rspos.w));
   sphereradsq *= sphereradsq; // square it, to save time in frag shader
 
+  //sphereradsq = sphereRadius.x*sphereRadius.x;
+  
   if (vmdprojectionmode == 1) {
     // set view direction vector from eye coordinate of vertex, for 
     // perspective views
-    V = normalize(vec3(ecpos) / ecpos.w);
-    rayorigin = vec3(0,0,0);
+    V = normalize(vec3(ecpos) / ecpos.w);//eyeDir;
+    rayorigin = vec3(0,0,0);//eyePos;//vec3(0,0,0);
   } else {
     // set view direction vector with constant eye coordinate, used for
     // orthographic views

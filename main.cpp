@@ -119,7 +119,7 @@ void keyboard(unsigned int key, int x, int y)
 	}
 }
 
-void joystick(int w, const jvec3& v)
+void joystick(int w, const vec4& v)
 {
 	if(scene) 
 	{

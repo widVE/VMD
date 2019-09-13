@@ -28,6 +28,9 @@
 uniform int vmdprojectionmode;   // perspective=1 orthographic=0
 uniform int   vmdtexturemode;    // VMD texture mode
 
+uniform vec3 eyePos;
+uniform vec3 eyeDir;
+
 // 
 // Outputs to fragment shader
 //
@@ -44,7 +47,7 @@ void main(void) {
   gl_ClipVertex = ecpos;
 
   // transform, normalize, and output normal.
-  oglnormal = normalize(gl_NormalMatrix * gl_Normal);
+  oglnormal = gl_Normal;// normalize(gl_NormalMatrix * gl_Normal);
 
   // pass along vertex color for use fragment shading,
   // fragment shader will get an interpolated color.
